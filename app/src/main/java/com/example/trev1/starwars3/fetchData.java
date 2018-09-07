@@ -20,7 +20,9 @@ public class fetchData extends AsyncTask<Integer,Void,Void> {
     String data = "";
     String dataParsed = "";
     String heightParsed = "";
+    String weightParsed = "";
     int heightCM = 0;
+    int weightKG = 0;
     String nameParsed = "";
 
     @Override
@@ -40,9 +42,12 @@ public class fetchData extends AsyncTask<Integer,Void,Void> {
             JSONObject JO = new JSONObject(data);
             nameParsed = "Name: " + JO.get("name");
             heightParsed = "" + JO.get("height");
+            weightParsed = "" + JO.get("mass");
             heightCM = Integer.parseInt(heightParsed);
             heightParsed = "Height: " + convertHeight(heightCM);
-            dataParsed = nameParsed + "\n" + heightParsed;
+            weightKG = Integer.parseInt(weightParsed);
+            weightParsed = "Weight: " + convertWeight(weightKG);
+            dataParsed = nameParsed + "\n" + heightParsed + "\n" + weightParsed;
 
 
 
@@ -65,6 +70,14 @@ public class fetchData extends AsyncTask<Integer,Void,Void> {
         String formatInches = df.format(inches);
         heightString = "" + (int)feet + " feet and " + formatInches + " inches";
         return heightString;
+    }
+
+    protected String convertWeight(int weight){
+        DecimalFormat df = new DecimalFormat("#.#");
+        double conversion = 2.20462;
+        double weightLB = weight * conversion;
+        String weightFormatted = df.format(weightLB) + " pounds";
+        return weightFormatted;
     }
 
     @Override
