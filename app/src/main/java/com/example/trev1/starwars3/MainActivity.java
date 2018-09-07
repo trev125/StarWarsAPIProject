@@ -19,31 +19,30 @@ public class MainActivity extends AppCompatActivity {
 
         tv = (TextView) findViewById(R.id.textViewID);
 
-        click = (Button) findViewById(R.id.changeTextButtonID);
-
-        click.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick (View view){
-                fetchData process = new fetchData();
-                process.execute();
-            }
-        });
-
-    }
-/*
-    public void changeText(View v){
-
-        if(!textChanged){
-            tv.setText("I changed the text!");
-            textChanged = true;
-        }
-        else {
-            tv.setText("The text was changed back!");
-            textChanged = false;
-        }
+//        click = (Button) findViewById(R.id.changeTextButtonID);
+//
+//        click.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick (View view){
+//                fetchData process = new fetchData();
+//                process.execute(2);
+//            }
+//        });
 
     }
-*/
+
+    public void changeTextLuke(View v){
+        fetchData process = new fetchData();
+        process.execute(1);
+
+    }
+
+    public void changeTextC3(View v){
+        fetchData process = new fetchData();
+        process.execute(2);
+
+    }
+
 
 
 
