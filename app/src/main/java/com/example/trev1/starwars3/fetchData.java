@@ -18,7 +18,7 @@ import java.text.DecimalFormat;
 
 public class fetchData extends AsyncTask<Integer,Void,Void> {
     String data = "";
-    String dataParsed = "";
+    public String dataParsed = "";
     String heightParsed = "";
     String weightParsed = "";
     int heightCM = 0;
@@ -87,6 +87,6 @@ public class fetchData extends AsyncTask<Integer,Void,Void> {
     @Override
     protected void onPostExecute(Void aVoid) {
         super.onPostExecute(aVoid);
-        MainActivity.tv.setText(this.dataParsed);
+        //MainActivity.tv.setText(this.dataParsed);
     }
 }

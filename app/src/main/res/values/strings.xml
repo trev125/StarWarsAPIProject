@@ -1,3 +1,5 @@
 <resources>
-    <string name="app_name">StarWars3</string>
+    <string name="app_name">Star Wars Directory</string>
+    <string name="buttonSend">Send</string>
+    <string name="title_activity_display_page">My Page</string>
 </resources>
