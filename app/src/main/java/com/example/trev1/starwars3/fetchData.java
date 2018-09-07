@@ -24,6 +24,9 @@ public class fetchData extends AsyncTask<Integer,Void,Void> {
     int heightCM = 0;
     int weightKG = 0;
     String nameParsed = "";
+    String hairColor = "";
+    String gender = "";
+    String homeWorld = "";
 
     @Override
     protected Void doInBackground(Integer... integers) {
@@ -47,7 +50,8 @@ public class fetchData extends AsyncTask<Integer,Void,Void> {
             heightParsed = "Height: " + convertHeight(heightCM);
             weightKG = Integer.parseInt(weightParsed);
             weightParsed = "Weight: " + convertWeight(weightKG);
-            dataParsed = nameParsed + "\n" + heightParsed + "\n" + weightParsed;
+            gender = "Gender: " + JO.get("gender");
+            dataParsed = nameParsed + "\n" + heightParsed + "\n" + weightParsed+ "\n" + gender;
 
 
 
