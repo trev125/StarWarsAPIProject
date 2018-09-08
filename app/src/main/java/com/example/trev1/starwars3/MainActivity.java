@@ -21,9 +21,13 @@ public class MainActivity extends AppCompatActivity {
     public void sendPageYoda(View v){
         Intent startNewActivity = new Intent(this, DisplayYodaPage.class);
         startActivity(startNewActivity);
+        fetchData process = new fetchData();
+        process.execute(20);
     }
 
     public void changeTextLuke(View v){
+        Intent startNewActivity = new Intent(this, DisplayLukePage.class);
+        startActivity(startNewActivity);
         fetchData process = new fetchData();
         process.execute(1);
 

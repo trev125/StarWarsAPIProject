@@ -1,10 +1,11 @@
 package com.example.trev1.starwars3;
 
+import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.app.Activity;
+import android.widget.ImageView;
 import android.widget.TextView;
 
-public class DisplayYodaPage extends Activity {
+public class DisplayLukePage extends AppCompatActivity {
     public static TextView tvName;
     public static TextView tvHeight;
     public static TextView tvWeight;
@@ -13,13 +14,10 @@ public class DisplayYodaPage extends Activity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.yoda_display_page);
+        setContentView(R.layout.activity_display_luke_page);
 
-        tvName = findViewById(R.id.yodaName);
-        tvHeight = findViewById(R.id.yodaHeight);
-        tvWeight = findViewById(R.id.yodaWeight);
-
+        tvName = findViewById(R.id.lukeName);
+        tvHeight = findViewById(R.id.lukeHeight);
+        tvWeight = findViewById(R.id.lukeWeight);
     }
-
 }
-

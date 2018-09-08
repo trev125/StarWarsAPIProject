@@ -20,7 +20,8 @@
         </activity>
         <activity
             android:name=".DisplayYodaPage"
-            android:label="@string/title_activity_display_page"></activity>
+            android:label="@string/title_activity_display_page" />
+        <activity android:name=".DisplayLukePage"></activity>
     </application>
 
 </manifest>

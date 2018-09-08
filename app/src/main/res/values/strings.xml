@@ -2,4 +2,6 @@
     <string name="app_name">Star Wars Directory</string>
     <string name="buttonSend">Send</string>
     <string name="title_activity_display_page">My Page</string>
+    <string name="n_a">N/A</string>
+    <string name="female">Female</string>
 </resources>

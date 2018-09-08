@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".DisplayYodaPage">
+    tools:context=".DisplayLukePage">
 
     <ImageView
         android:id="@+id/yodaImage"
@@ -16,7 +16,8 @@
         app:layout_constraintBottom_toTopOf="@+id/nameTitle"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/dagobah" />
+        app:srcCompat="@drawable/tatooine"
+        android:contentDescription="TODO" />
 
     <TextView
         android:id="@+id/nameTitle"
@@ -43,7 +44,7 @@
         app:layout_constraintTop_toBottomOf="@+id/nameTitle" />
 
     <TextView
-        android:id="@+id/yodaName"
+        android:id="@+id/lukeName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
@@ -52,7 +53,7 @@
         app:layout_constraintStart_toEndOf="@+id/nameTitle" />
 
     <TextView
-        android:id="@+id/yodaHeight"
+        android:id="@+id/lukeHeight"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="13dp"
@@ -72,7 +73,7 @@
         app:layout_constraintTop_toBottomOf="@+id/heightTitle" />
 
     <TextView
-        android:id="@+id/yodaWeight"
+        android:id="@+id/lukeWeight"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
@@ -106,7 +107,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
-        android:text="@string/female"
+        android:text="Female"
         app:layout_constraintStart_toEndOf="@+id/rbMale"
         app:layout_constraintTop_toTopOf="@+id/genderTitle" />
 
@@ -115,7 +116,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
-        android:text="@string/n_a"
+        android:text="N/A"
         app:layout_constraintStart_toEndOf="@+id/rbFemale"
         app:layout_constraintTop_toTopOf="@+id/genderTitle" />
+
 </android.support.constraint.ConstraintLayout>

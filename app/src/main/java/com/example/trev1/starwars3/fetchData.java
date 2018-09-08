@@ -19,14 +19,14 @@ import java.text.DecimalFormat;
 public class fetchData extends AsyncTask<Integer,Void,Void> {
     String data = "";
     public String dataParsed = "";
+    public String nameParsed = "";
     String heightParsed = "";
     String weightParsed = "";
     int heightCM = 0;
     int weightKG = 0;
-    String nameParsed = "";
-    String hairColor = "";
-    String gender = "";
-    String homeWorld = "";
+    String hairColorParsed = "";
+    String genderParsed = "";
+    String homeWorldParsed = "";
 
     @Override
     protected Void doInBackground(Integer... integers) {
@@ -43,15 +43,16 @@ public class fetchData extends AsyncTask<Integer,Void,Void> {
             }
 
             JSONObject JO = new JSONObject(data);
-            nameParsed = "Name: " + JO.get("name");
+            nameParsed = "" + JO.get("name");
             heightParsed = "" + JO.get("height");
             weightParsed = "" + JO.get("mass");
             heightCM = Integer.parseInt(heightParsed);
-            heightParsed = "Height: " + convertHeight(heightCM);
+            heightParsed = "" + convertHeight(heightCM);
             weightKG = Integer.parseInt(weightParsed);
-            weightParsed = "Weight: " + convertWeight(weightKG);
-            gender = "Gender: " + JO.get("gender");
-            dataParsed = nameParsed + "\n" + heightParsed + "\n" + weightParsed+ "\n" + gender;
+            weightParsed = "" + convertWeight(weightKG);
+            genderParsed = "" + JO.get("gender");
+            genderParsed = genderParsed.substring(0, 1).toUpperCase() + genderParsed.substring(1).toLowerCase();
+            dataParsed =  "Name: " + nameParsed + "\n" + "Height: " + heightParsed + "\n" + "Weight: " + weightParsed+ "\n" + "Gender: " + genderParsed;
 
 
 
@@ -87,6 +88,24 @@ public class fetchData extends AsyncTask<Integer,Void,Void> {
     @Override
     protected void onPostExecute(Void aVoid) {
         super.onPostExecute(aVoid);
+        String name = this.nameParsed;
+        String height = this.heightParsed;
+        String weight = this.weightParsed;
+        String gender = this.genderParsed;
+
+        if(name.equals("Luke Skywalker")){
+            DisplayLukePage.tvName.setText(name);
+            DisplayLukePage.tvHeight.setText(height);
+            DisplayLukePage.tvWeight.setText(weight);
+        }
+        else if (name.equals("C-3PO")){
+            MainActivity.tv.setText(data);
+        }
+        else if(name.equals("Yoda")) {
+            DisplayYodaPage.tvName.setText(name);
+            DisplayYodaPage.tvHeight.setText(height);
+            DisplayYodaPage.tvWeight.setText(weight);
+        }
         //MainActivity.tv.setText(this.dataParsed);
     }
 }
