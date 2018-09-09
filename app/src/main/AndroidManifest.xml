@@ -21,7 +21,8 @@
         <activity
             android:name=".DisplayYodaPage"
             android:label="@string/title_activity_display_page" />
-        <activity android:name=".DisplayLukePage"></activity>
+        <activity android:name=".DisplayLukePage" />
+        <activity android:name=".DisplayC3POPage"></activity>
     </application>
 
 </manifest>

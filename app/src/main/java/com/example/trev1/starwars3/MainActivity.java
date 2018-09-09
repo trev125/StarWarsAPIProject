@@ -34,6 +34,8 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void changeTextC3(View v){
+        Intent startNewActivity = new Intent(this, DisplayC3POPage.class);
+        startActivity(startNewActivity);
         fetchData process = new fetchData();
         process.execute(2);
 

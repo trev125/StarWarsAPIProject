@@ -52,7 +52,9 @@ public class fetchData extends AsyncTask<Integer,Void,Void> {
             weightParsed = "" + convertWeight(weightKG);
             genderParsed = "" + JO.get("gender");
             genderParsed = genderParsed.substring(0, 1).toUpperCase() + genderParsed.substring(1).toLowerCase();
-            dataParsed =  "Name: " + nameParsed + "\n" + "Height: " + heightParsed + "\n" + "Weight: " + weightParsed+ "\n" + "Gender: " + genderParsed;
+            //dataParsed =  "Name: " + nameParsed + "\n" + "Height: " + heightParsed + "\n" + "Weight: " + weightParsed+ "\n" + "Gender: " + genderParsed;
+            homeWorldParsed = "" + JO.get("homeworld");
+            homeWorldParsed = homeworldParse(homeWorldParsed);
 
 
 
@@ -85,6 +87,32 @@ public class fetchData extends AsyncTask<Integer,Void,Void> {
         return weightFormatted;
     }
 
+    protected String homeworldParse (String homeworld) {
+        String homeworldURL = homeworld;
+        String homeworldName = "";
+        try {
+            URL url = new URL(homeworldURL + "?format=json");
+            HttpURLConnection httpURLConnection = (HttpURLConnection) url.openConnection();
+            InputStream inputStream = httpURLConnection.getInputStream();
+            BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(inputStream));
+            String line = "";
+            String data = "";
+            while (line != null) {
+                line = bufferedReader.readLine();
+                data = data + line;
+            }
+            JSONObject JO = new JSONObject(data);
+            homeworldName = "" + JO.get("name");
+        }catch (MalformedURLException e){
+        e.printStackTrace();
+        } catch (IOException e) {
+        e.printStackTrace();
+        } catch (JSONException e) {
+        e.printStackTrace();
+        }
+    return homeworldName;
+    }
+
     @Override
     protected void onPostExecute(Void aVoid) {
         super.onPostExecute(aVoid);
@@ -92,19 +120,34 @@ public class fetchData extends AsyncTask<Integer,Void,Void> {
         String height = this.heightParsed;
         String weight = this.weightParsed;
         String gender = this.genderParsed;
+        String homeWorld = this.homeWorldParsed;
 
         if(name.equals("Luke Skywalker")){
             DisplayLukePage.tvName.setText(name);
             DisplayLukePage.tvHeight.setText(height);
             DisplayLukePage.tvWeight.setText(weight);
+            if(gender.equals("Male")){
+                DisplayLukePage.rbGender.toggle();
+            }
+            DisplayLukePage.tvHomeWorld.setText(homeWorld);
         }
         else if (name.equals("C-3PO")){
-            MainActivity.tv.setText(data);
+            DisplayC3POPage.tvName.setText(name);
+            DisplayC3POPage.tvHeight.setText(height);
+            DisplayC3POPage.tvWeight.setText(weight);
+            if(gender.equals("N/a")){
+                DisplayC3POPage.rbGender.toggle();
+            }
+            DisplayC3POPage.tvHomeWorld.setText(homeWorld);
         }
         else if(name.equals("Yoda")) {
             DisplayYodaPage.tvName.setText(name);
             DisplayYodaPage.tvHeight.setText(height);
             DisplayYodaPage.tvWeight.setText(weight);
+            if(gender.equals("Male")){
+                DisplayYodaPage.rbGender.toggle();
+            }
+            DisplayYodaPage.tvHomeWorld.setText(homeWorld);
         }
         //MainActivity.tv.setText(this.dataParsed);
     }

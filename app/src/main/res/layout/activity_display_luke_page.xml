@@ -6,18 +6,42 @@
     android:layout_height="match_parent"
     tools:context=".DisplayLukePage">
 
+    <TextView
+        android:id="@+id/lukeHomeWorld"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:text="TextView"
+        app:layout_constraintBottom_toBottomOf="@+id/homeWorldTitle"
+        app:layout_constraintStart_toEndOf="@+id/homeWorldTitle" />
+
+    <TextView
+        android:id="@+id/homeWorldTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="20dp"
+        android:text="Home World:"
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/genderTitle" />
+
     <ImageView
-        android:id="@+id/yodaImage"
-        android:layout_width="445dp"
+        android:id="@+id/lukeImage"
+        android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_marginBottom="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
         android:adjustViewBounds="false"
         android:cropToPadding="false"
+        android:visibility="visible"
         app:layout_constraintBottom_toTopOf="@+id/nameTitle"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/tatooine"
-        android:contentDescription="TODO" />
+        app:srcCompat="@drawable/tatooine" />
 
     <TextView
         android:id="@+id/nameTitle"
@@ -30,7 +54,7 @@
         android:textAppearance="@style/TextAppearance.AppCompat.Medium"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/yodaImage" />
+        app:layout_constraintTop_toBottomOf="@+id/lukeImage" />
 
     <TextView
         android:id="@+id/heightTitle"
@@ -97,7 +121,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
-        android:checked="true"
+        android:checked="false"
         android:text="Male"
         app:layout_constraintStart_toEndOf="@+id/genderTitle"
         app:layout_constraintTop_toTopOf="@+id/genderTitle" />
@@ -107,6 +131,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
+        android:checked="false"
         android:text="Female"
         app:layout_constraintStart_toEndOf="@+id/rbMale"
         app:layout_constraintTop_toTopOf="@+id/genderTitle" />
@@ -116,6 +141,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
+        android:checked="false"
         android:text="N/A"
         app:layout_constraintStart_toEndOf="@+id/rbFemale"
         app:layout_constraintTop_toTopOf="@+id/genderTitle" />
