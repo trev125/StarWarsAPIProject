@@ -122,32 +122,98 @@ public class fetchData extends AsyncTask<Integer,Void,Void> {
         String gender = this.genderParsed;
         String homeWorld = this.homeWorldParsed;
 
+        int [] imageResources = new int [] {R.drawable.tatooine, R.drawable.tatooinemos, R.drawable.dago, R.drawable.tatoo, R.drawable.stew, R.drawable.naboo, R.drawable.alderaan,
+                                            R.drawable.corellia, R.drawable.kash};
+
         if(name.equals("Luke Skywalker")){
-            DisplayLukePage.tvName.setText(name);
-            DisplayLukePage.tvHeight.setText(height);
-            DisplayLukePage.tvWeight.setText(weight);
+            DisplayPerson.tvName.setText(name);
+            DisplayPerson.tvHeight.setText(height);
+            DisplayPerson.tvWeight.setText(weight);
             if(gender.equals("Male")){
-                DisplayLukePage.rbGender.toggle();
+                DisplayPerson.rbGenderMale.toggle();
             }
-            DisplayLukePage.tvHomeWorld.setText(homeWorld);
+            DisplayPerson.tvHomeWorld.setText(homeWorld);
+            DisplayPerson.ivTopImage.setImageResource(imageResources[0]);
         }
         else if (name.equals("C-3PO")){
-            DisplayC3POPage.tvName.setText(name);
-            DisplayC3POPage.tvHeight.setText(height);
-            DisplayC3POPage.tvWeight.setText(weight);
+            DisplayPerson.tvName.setText(name);
+            DisplayPerson.tvHeight.setText(height);
+            DisplayPerson.tvWeight.setText(weight);
             if(gender.equals("N/a")){
-                DisplayC3POPage.rbGender.toggle();
+                DisplayPerson.rbGenderNa.toggle();
             }
-            DisplayC3POPage.tvHomeWorld.setText(homeWorld);
+            DisplayPerson.tvHomeWorld.setText(homeWorld);
+            DisplayPerson.ivTopImage.setImageResource(imageResources[1]);
         }
         else if(name.equals("Yoda")) {
-            DisplayYodaPage.tvName.setText(name);
-            DisplayYodaPage.tvHeight.setText(height);
-            DisplayYodaPage.tvWeight.setText(weight);
+            DisplayPerson.tvName.setText(name);
+            DisplayPerson.tvHeight.setText(height);
+            DisplayPerson.tvWeight.setText(weight);
             if(gender.equals("Male")){
-                DisplayYodaPage.rbGender.toggle();
+                DisplayPerson.rbGenderMale.toggle();
             }
-            DisplayYodaPage.tvHomeWorld.setText(homeWorld);
+            DisplayPerson.tvHomeWorld.setText(homeWorld);
+            DisplayPerson.ivTopImage.setImageResource(imageResources[2]);
+        }
+        else if(name.equals("Anakin Skywalker")){
+            DisplayPerson.tvName.setText(name);
+            DisplayPerson.tvHeight.setText(height);
+            DisplayPerson.tvWeight.setText(weight);
+            if(gender.equals("Male")){
+                DisplayPerson.rbGenderMale.toggle();
+            }
+            DisplayPerson.tvHomeWorld.setText(homeWorld);
+            DisplayPerson.ivTopImage.setImageResource(imageResources[3]);
+        }
+        else if (name.equals("Obi-Wan Kenobi")){
+            DisplayPerson.tvName.setText(name);
+            DisplayPerson.tvHeight.setText(height);
+            DisplayPerson.tvWeight.setText(weight);
+            if(gender.equals("Male")){
+                DisplayPerson.rbGenderMale.toggle();
+            }
+            DisplayPerson.tvHomeWorld.setText(homeWorld);
+            DisplayPerson.ivTopImage.setImageResource(imageResources[4]);
+        }
+        else if(name.equals("Palpatine")) {
+            DisplayPerson.tvName.setText(name);
+            DisplayPerson.tvHeight.setText(height);
+            DisplayPerson.tvWeight.setText(weight);
+            if(gender.equals("Male")){
+                DisplayPerson.rbGenderMale.toggle();
+            }
+            DisplayPerson.tvHomeWorld.setText(homeWorld);
+            DisplayPerson.ivTopImage.setImageResource(imageResources[5]);
+        }
+        else if(name.equals("Leia Organa")){
+            DisplayPerson.tvName.setText(name);
+            DisplayPerson.tvHeight.setText(height);
+            DisplayPerson.tvWeight.setText(weight);
+            if(gender.equals("Female")){
+                DisplayPerson.rbGenderFemale.toggle();
+            }
+            DisplayPerson.tvHomeWorld.setText(homeWorld);
+            DisplayPerson.ivTopImage.setImageResource(imageResources[6]);
+        }
+        else if (name.equals("Han Solo")){
+            DisplayPerson.tvName.setText(name);
+            DisplayPerson.tvHeight.setText(height);
+            DisplayPerson.tvWeight.setText(weight);
+            if(gender.equals("Male")){
+                DisplayPerson.rbGenderMale.toggle();
+            }
+            DisplayPerson.tvHomeWorld.setText(homeWorld);
+            DisplayPerson.ivTopImage.setImageResource(imageResources[7]);
+        }
+        else if(name.equals("Chewbacca")) {
+            DisplayPerson.tvName.setText(name);
+            DisplayPerson.tvHeight.setText(height);
+            DisplayPerson.tvWeight.setText(weight);
+            if(gender.equals("Male")){
+                DisplayPerson.rbGenderMale.toggle();
+            }
+            DisplayPerson.tvHomeWorld.setText(homeWorld);
+            DisplayPerson.ivTopImage.setImageResource(imageResources[8]);
         }
         //MainActivity.tv.setText(this.dataParsed);
     }

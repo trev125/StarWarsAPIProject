@@ -6,58 +6,135 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <TextView
-        android:id="@+id/textViewID"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <ImageButton
-        android:id="@+id/imageButton2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:onClick="changeTextC3"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textViewID"
-        app:srcCompat="@mipmap/cpo" />
-
-    <ImageButton
-        android:id="@+id/imageButton3"
-        android:layout_width="72dp"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:onClick="changeTextLuke"
-        app:layout_constraintBottom_toTopOf="@+id/textViewID"
-        app:layout_constraintEnd_toStartOf="@+id/imageButton"
+    <ImageView
+        android:id="@+id/imageLuke"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="150dp"
+        android:clickable="true"
+        android:contentDescription="@string/luke"
+        android:onClick="sendPageLuke"
+        app:layout_constraintEnd_toStartOf="@+id/imageC3"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@mipmap/luke" />
+        app:srcCompat="@drawable/luke" />
 
-    <ImageButton
-        android:id="@+id/imageButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="8dp"
-        android:layout_marginEnd="88dp"
-        android:layout_marginTop="8dp"
+    <ImageView
+        android:id="@+id/imageC3"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_marginTop="150dp"
+        android:clickable="true"
+        android:contentDescription="@string/c3po"
+        android:onClick="sendPageC3"
+        app:layout_constraintEnd_toStartOf="@+id/imageYoda"
+        app:layout_constraintStart_toEndOf="@+id/imageLuke"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/cpo" />
+
+    <ImageView
+        android:id="@+id/imageYoda"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="150dp"
+        android:clickable="true"
+        android:contentDescription="@string/yoda"
         android:onClick="sendPageYoda"
-        app:layout_constraintBottom_toTopOf="@+id/textViewID"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/imageC3"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.497"
-        app:srcCompat="@mipmap/yoda" />
+        app:srcCompat="@drawable/yoda" />
+
+    <ImageView
+        android:id="@+id/imageDarth"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="20dp"
+        android:clickable="true"
+        android:contentDescription="@string/darth"
+        android:onClick="sendPageDarth"
+        app:layout_constraintEnd_toStartOf="@+id/imageObi"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageLuke"
+        app:srcCompat="@drawable/darth" />
+
+    <ImageView
+        android:id="@+id/imageObi"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_marginTop="20dp"
+        android:clickable="true"
+        android:contentDescription="@string/obi"
+        android:onClick="sendPageObi"
+        app:layout_constraintEnd_toStartOf="@+id/imageSidious"
+        app:layout_constraintStart_toEndOf="@+id/imageDarth"
+        app:layout_constraintTop_toBottomOf="@+id/imageC3"
+        app:srcCompat="@drawable/obi" />
+
+    <ImageView
+        android:id="@+id/imageSidious"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="20dp"
+        android:clickable="true"
+        android:contentDescription="@string/sid"
+        android:onClick="sendPageSid"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/imageObi"
+        app:layout_constraintTop_toBottomOf="@+id/imageYoda"
+        app:srcCompat="@drawable/sid" />
+
+    <ImageView
+        android:id="@+id/imageLeia"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="20dp"
+        android:clickable="true"
+        android:contentDescription="@string/leia"
+        android:onClick="sendPageLeia"
+        app:layout_constraintEnd_toStartOf="@+id/imageHan"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageDarth"
+        app:srcCompat="@drawable/leia" />
+
+    <ImageView
+        android:id="@+id/imageHan"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_marginTop="20dp"
+        android:clickable="true"
+        android:contentDescription="@string/han"
+        android:onClick="sendPageHan"
+        app:layout_constraintEnd_toStartOf="@+id/imageChewie"
+        app:layout_constraintStart_toEndOf="@+id/imageLeia"
+        app:layout_constraintTop_toBottomOf="@+id/imageObi"
+        app:srcCompat="@drawable/han" />
+
+    <ImageView
+        android:id="@+id/imageChewie"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="20dp"
+        android:clickable="true"
+        android:contentDescription="@string/chewie"
+        android:onClick="sendPageChewie"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/imageHan"
+        app:layout_constraintTop_toBottomOf="@+id/imageSidious"
+        app:srcCompat="@drawable/chewie" />
+
 
 </android.support.constraint.ConstraintLayout>

@@ -4,4 +4,15 @@
     <string name="title_activity_display_page">My Page</string>
     <string name="n_a">N/A</string>
     <string name="female">Female</string>
+    <string name="title_activity_display_person">DisplayPerson</string>
+    <string name="luke">Luke Skywalker</string>
+    <string name="c3po">C-3PO</string>
+    <string name="yoda">Yoda</string>
+    <string name="darth">Anakin Skywalker</string>
+    <string name="obi">Obi-Wan Kenobi</string>
+    <string name="sid">Sheev Palpatine</string>
+    <string name="boba">Boba Fett</string>
+    <string name="han">Han Solo</string>
+    <string name="chewie">Chewbacca</string>
+    <string name="leia">Leia Organa</string>
 </resources>
