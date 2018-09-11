@@ -12,10 +12,12 @@ public class DisplayPerson extends AppCompatActivity {
     public static TextView tvName;
     public static TextView tvHeight;
     public static TextView tvWeight;
+    public static TextView tvNameTitle;
     public static RadioButton rbGenderMale;
     public static RadioButton rbGenderFemale;
     public static RadioButton rbGenderNa;
     public static TextView tvHomeWorld;
+    public static TextView tvSpecies;
     public static ImageView ivTopImage;
     public static String stringDisplayName = "";
 
@@ -37,6 +39,8 @@ public class DisplayPerson extends AppCompatActivity {
         rbGenderNa = findViewById(R.id.rbNA);
         tvHomeWorld = findViewById(R.id.homeWorld);
         ivTopImage = findViewById(R.id.topImage);
+        tvNameTitle = findViewById(R.id.bigNameTitle);
+        tvSpecies = findViewById(R.id.species);
 
     }
 

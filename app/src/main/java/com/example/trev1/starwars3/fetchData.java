@@ -28,6 +28,7 @@ public class fetchData extends AsyncTask<Integer,Void,Void> {
     String hairColorParsed = "";
     String genderParsed = "";
     String homeWorldParsed = "";
+    String speciesParsed = "";
 
     @Override
     protected Void doInBackground(Integer... integers) {
@@ -56,6 +57,14 @@ public class fetchData extends AsyncTask<Integer,Void,Void> {
             //dataParsed =  "Name: " + nameParsed + "\n" + "Height: " + heightParsed + "\n" + "Weight: " + weightParsed+ "\n" + "Gender: " + genderParsed;
             homeWorldParsed = "" + JO.get("homeworld");
             homeWorldParsed = homeworldParse(homeWorldParsed);
+//            speciesParsed = "" + JO.get("species");
+//            JSONArray jsonarray = new JSONArray(speciesParsed);
+//            for (int i = 0; i < jsonarray.length(); i++) {
+//                JSONObject jsonobject = jsonarray.getJSONObject(i);
+//                String name = jsonobject.getString("name");
+//                String url2 = jsonobject.getString("url");
+//            }
+//            speciesParsed = homeworldParse(speciesParsed);
 
 
 
@@ -114,110 +123,85 @@ public class fetchData extends AsyncTask<Integer,Void,Void> {
     return homeworldName;
     }
 
+//    protected String speciesParse (String species) {
+//        String speciesURL = species;
+//        String speciesName = "";
+//        try {
+//            URL url = new URL(speciesURL + "?format=json");
+//            HttpURLConnection httpURLConnection = (HttpURLConnection) url.openConnection();
+//            InputStream inputStream = httpURLConnection.getInputStream();
+//            BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(inputStream));
+//            String line = "";
+//            String data = "";
+//            while (line != null) {
+//                line = bufferedReader.readLine();
+//                data = data + line;
+//            }
+//            JSONObject JO = new JSONObject(data);
+//            speciesName = "" + JO.get("name");
+//        }catch (MalformedURLException e){
+//            e.printStackTrace();
+//        } catch (IOException e) {
+//            e.printStackTrace();
+//        } catch (JSONException e) {
+//            e.printStackTrace();
+//        }
+//        return speciesName;
+//    }
+
     @Override
     protected void onPostExecute(Void aVoid) {
         super.onPostExecute(aVoid);
         String name = this.nameParsed;
         String height = this.heightParsed;
         String weight = this.weightParsed;
-        String gender = this.genderParsed;
         String homeWorld = this.homeWorldParsed;
+        String species = this.speciesParsed;
 
         int [] imageResources = new int [] {R.drawable.tatooine, R.drawable.tatooinemos, R.drawable.dago, R.drawable.tatoo, R.drawable.stew, R.drawable.naboo, R.drawable.alderaan,
                                             R.drawable.corellia, R.drawable.kash};
 
+        DisplayPerson.tvName.setText(name);
+        DisplayPerson.tvHeight.setText(height);
+        DisplayPerson.tvWeight.setText(weight);
+        DisplayPerson.tvHomeWorld.setText(homeWorld);
+        DisplayPerson.tvNameTitle.setText(name);
+        DisplayPerson.tvSpecies.setText(species);
+
         if(name.equals("Luke Skywalker")){
-            DisplayPerson.tvName.setText(name);
-            DisplayPerson.tvHeight.setText(height);
-            DisplayPerson.tvWeight.setText(weight);
-            if(gender.equals("Male")){
-                DisplayPerson.rbGenderMale.toggle();
-            }
-            DisplayPerson.tvHomeWorld.setText(homeWorld);
+            DisplayPerson.rbGenderMale.toggle();
             DisplayPerson.ivTopImage.setImageResource(imageResources[0]);
-            DisplayPerson.stringDisplayName = name;
         }
         else if (name.equals("C-3PO")){
-            DisplayPerson.tvName.setText(name);
-            DisplayPerson.tvHeight.setText(height);
-            DisplayPerson.tvWeight.setText(weight);
-            if(gender.equals("N/a")){
-                DisplayPerson.rbGenderNa.toggle();
-            }
-            DisplayPerson.tvHomeWorld.setText(homeWorld);
+            DisplayPerson.rbGenderNa.toggle();
             DisplayPerson.ivTopImage.setImageResource(imageResources[1]);
-            DisplayPerson.stringDisplayName = name;
-
         }
         else if(name.equals("Yoda")) {
-            DisplayPerson.tvName.setText(name);
-            DisplayPerson.tvHeight.setText(height);
-            DisplayPerson.tvWeight.setText(weight);
-            if(gender.equals("Male")){
-                DisplayPerson.rbGenderMale.toggle();
-            }
-            DisplayPerson.tvHomeWorld.setText(homeWorld);
+            DisplayPerson.rbGenderMale.toggle();
             DisplayPerson.ivTopImage.setImageResource(imageResources[2]);
-            DisplayPerson.stringDisplayName = name;
         }
         else if(name.equals("Anakin Skywalker")){
-            DisplayPerson.tvName.setText(name);
-            DisplayPerson.tvHeight.setText(height);
-            DisplayPerson.tvWeight.setText(weight);
-            if(gender.equals("Male")){
-                DisplayPerson.rbGenderMale.toggle();
-            }
-            DisplayPerson.tvHomeWorld.setText(homeWorld);
+            DisplayPerson.rbGenderMale.toggle();
             DisplayPerson.ivTopImage.setImageResource(imageResources[3]);
         }
         else if (name.equals("Obi-Wan Kenobi")){
-            DisplayPerson.tvName.setText(name);
-            DisplayPerson.tvHeight.setText(height);
-            DisplayPerson.tvWeight.setText(weight);
-            if(gender.equals("Male")){
-                DisplayPerson.rbGenderMale.toggle();
-            }
-            DisplayPerson.tvHomeWorld.setText(homeWorld);
+            DisplayPerson.rbGenderMale.toggle();
             DisplayPerson.ivTopImage.setImageResource(imageResources[4]);
         }
         else if(name.equals("Palpatine")) {
-            DisplayPerson.tvName.setText(name);
-            DisplayPerson.tvHeight.setText(height);
-            DisplayPerson.tvWeight.setText(weight);
-            if(gender.equals("Male")){
-                DisplayPerson.rbGenderMale.toggle();
-            }
-            DisplayPerson.tvHomeWorld.setText(homeWorld);
+            DisplayPerson.rbGenderMale.toggle();
             DisplayPerson.ivTopImage.setImageResource(imageResources[5]);
         }
         else if(name.equals("Leia Organa")){
-            DisplayPerson.tvName.setText(name);
-            DisplayPerson.tvHeight.setText(height);
-            DisplayPerson.tvWeight.setText(weight);
-            if(gender.equals("Female")){
-                DisplayPerson.rbGenderFemale.toggle();
-            }
-            DisplayPerson.tvHomeWorld.setText(homeWorld);
+            DisplayPerson.rbGenderFemale.toggle();
             DisplayPerson.ivTopImage.setImageResource(imageResources[6]);
         }
         else if (name.equals("Han Solo")){
-            DisplayPerson.tvName.setText(name);
-            DisplayPerson.tvHeight.setText(height);
-            DisplayPerson.tvWeight.setText(weight);
-            if(gender.equals("Male")){
-                DisplayPerson.rbGenderMale.toggle();
-            }
-            DisplayPerson.tvHomeWorld.setText(homeWorld);
+            DisplayPerson.rbGenderMale.toggle();
             DisplayPerson.ivTopImage.setImageResource(imageResources[7]);
         }
         else if(name.equals("Chewbacca")) {
-            DisplayPerson.tvName.setText(name);
-            DisplayPerson.tvHeight.setText(height);
-            DisplayPerson.tvWeight.setText(weight);
-            if(gender.equals("Male")){
-                DisplayPerson.rbGenderMale.toggle();
-            }
-            DisplayPerson.tvHomeWorld.setText(homeWorld);
+            DisplayPerson.rbGenderMale.toggle();
             DisplayPerson.ivTopImage.setImageResource(imageResources[8]);
         }
     }
