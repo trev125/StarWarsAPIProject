@@ -28,7 +28,8 @@ public class fetchData extends AsyncTask<Integer,Void,Void> {
     String hairColorParsed = "";
     String genderParsed = "";
     String homeWorldParsed = "";
-    String speciesParsed = "";
+    String eyeColorParsed = "";
+    String birthYearParsed = "";
 
     @Override
     protected Void doInBackground(Integer... integers) {
@@ -57,16 +58,11 @@ public class fetchData extends AsyncTask<Integer,Void,Void> {
             //dataParsed =  "Name: " + nameParsed + "\n" + "Height: " + heightParsed + "\n" + "Weight: " + weightParsed+ "\n" + "Gender: " + genderParsed;
             homeWorldParsed = "" + JO.get("homeworld");
             homeWorldParsed = homeworldParse(homeWorldParsed);
-//            speciesParsed = "" + JO.get("species");
-//            JSONArray jsonarray = new JSONArray(speciesParsed);
-//            for (int i = 0; i < jsonarray.length(); i++) {
-//                JSONObject jsonobject = jsonarray.getJSONObject(i);
-//                String name = jsonobject.getString("name");
-//                String url2 = jsonobject.getString("url");
-//            }
-//            speciesParsed = homeworldParse(speciesParsed);
-
-
+            hairColorParsed = "" + JO.get("hair_color");
+            hairColorParsed = hairColorParsed.substring(0, 1).toUpperCase() + hairColorParsed.substring(1).toLowerCase();
+            eyeColorParsed = "" + JO.get("eye_color");
+            eyeColorParsed = eyeColorParsed.substring(0, 1).toUpperCase() + eyeColorParsed.substring(1).toLowerCase();
+            birthYearParsed = "" + JO.get("birth_year");
 
         }catch (MalformedURLException e){
             e.printStackTrace();
@@ -123,32 +119,6 @@ public class fetchData extends AsyncTask<Integer,Void,Void> {
     return homeworldName;
     }
 
-//    protected String speciesParse (String species) {
-//        String speciesURL = species;
-//        String speciesName = "";
-//        try {
-//            URL url = new URL(speciesURL + "?format=json");
-//            HttpURLConnection httpURLConnection = (HttpURLConnection) url.openConnection();
-//            InputStream inputStream = httpURLConnection.getInputStream();
-//            BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(inputStream));
-//            String line = "";
-//            String data = "";
-//            while (line != null) {
-//                line = bufferedReader.readLine();
-//                data = data + line;
-//            }
-//            JSONObject JO = new JSONObject(data);
-//            speciesName = "" + JO.get("name");
-//        }catch (MalformedURLException e){
-//            e.printStackTrace();
-//        } catch (IOException e) {
-//            e.printStackTrace();
-//        } catch (JSONException e) {
-//            e.printStackTrace();
-//        }
-//        return speciesName;
-//    }
-
     @Override
     protected void onPostExecute(Void aVoid) {
         super.onPostExecute(aVoid);
@@ -156,7 +126,9 @@ public class fetchData extends AsyncTask<Integer,Void,Void> {
         String height = this.heightParsed;
         String weight = this.weightParsed;
         String homeWorld = this.homeWorldParsed;
-        String species = this.speciesParsed;
+        String hairColor = this.hairColorParsed;
+        String eyeColor = this.eyeColorParsed;
+        String birthYear = this.birthYearParsed;
 
         int [] imageResources = new int [] {R.drawable.tatooine, R.drawable.tatooinemos, R.drawable.dago, R.drawable.tatoo, R.drawable.stew, R.drawable.naboo, R.drawable.alderaan,
                                             R.drawable.corellia, R.drawable.kash};
@@ -166,7 +138,9 @@ public class fetchData extends AsyncTask<Integer,Void,Void> {
         DisplayPerson.tvWeight.setText(weight);
         DisplayPerson.tvHomeWorld.setText(homeWorld);
         DisplayPerson.tvNameTitle.setText(name);
-        DisplayPerson.tvSpecies.setText(species);
+        DisplayPerson.tvHairColor.setText(hairColor);
+        DisplayPerson.tvEyeColor.setText(eyeColor);
+        DisplayPerson.tvBirthYear.setText(birthYear);
 
         if(name.equals("Luke Skywalker")){
             DisplayPerson.rbGenderMale.toggle();

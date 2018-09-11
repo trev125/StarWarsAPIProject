@@ -17,9 +17,11 @@ public class DisplayPerson extends AppCompatActivity {
     public static RadioButton rbGenderFemale;
     public static RadioButton rbGenderNa;
     public static TextView tvHomeWorld;
-    public static TextView tvSpecies;
+    public static TextView tvHairColor;
     public static ImageView ivTopImage;
     public static String stringDisplayName = "";
+    public static TextView tvEyeColor;
+    public static TextView tvBirthYear;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,7 +42,9 @@ public class DisplayPerson extends AppCompatActivity {
         tvHomeWorld = findViewById(R.id.homeWorld);
         ivTopImage = findViewById(R.id.topImage);
         tvNameTitle = findViewById(R.id.bigNameTitle);
-        tvSpecies = findViewById(R.id.species);
+        tvHairColor = findViewById(R.id.hairColor);
+        tvEyeColor = findViewById(R.id.eyeColor);
+        tvBirthYear = findViewById(R.id.birthYear);
 
     }
 

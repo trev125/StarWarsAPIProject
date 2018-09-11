@@ -26,17 +26,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/genderTitle" />
 
-    <TextView
-        android:id="@+id/speciesTitle"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="20dp"
-        android:text="Species:"
-        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/homeWorldTitle" />
-
     <ImageView
         android:id="@+id/topImage"
         android:layout_width="0dp"
@@ -162,17 +151,70 @@
         android:layout_height="wrap_content"
         android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
+        android:text="@string/blankText"
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        tools:layout_editor_absoluteY="16dp" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/species"
+        android:id="@+id/hairColorTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="20dp"
+        android:text="Hair Color:"
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/homeWorldTitle" />
+
+    <TextView
+        android:id="@+id/hairColor"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
-        app:layout_constraintBottom_toBottomOf="@+id/speciesTitle"
-        app:layout_constraintStart_toEndOf="@+id/speciesTitle" />
+        android:text="@string/blankText"
+        app:layout_constraintBottom_toBottomOf="@+id/hairColorTitle"
+        app:layout_constraintStart_toEndOf="@+id/hairColorTitle" />
+
+    <TextView
+        android:id="@+id/eyeColorTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="20dp"
+        android:text="Eye Color:"
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/hairColorTitle" />
+
+    <TextView
+        android:id="@+id/eyeColor"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:text="@string/blankText"
+        app:layout_constraintBottom_toBottomOf="@+id/eyeColorTitle"
+        app:layout_constraintStart_toEndOf="@+id/eyeColorTitle" />
+
+    <TextView
+        android:id="@+id/birthYearTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="20dp"
+        android:text="Birth Year:"
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/eyeColorTitle" />
+
+    <TextView
+        android:id="@+id/birthYear"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:text="@string/blankText"
+        app:layout_constraintBottom_toBottomOf="@+id/birthYearTitle"
+        app:layout_constraintStart_toEndOf="@+id/birthYearTitle" />
 
 </android.support.constraint.ConstraintLayout>
