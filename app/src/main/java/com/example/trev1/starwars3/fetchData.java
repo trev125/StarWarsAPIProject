@@ -1,5 +1,6 @@
 package com.example.trev1.starwars3;
 
+import android.app.Activity;
 import android.os.AsyncTask;
 import android.renderscript.ScriptGroup;
 
@@ -134,6 +135,7 @@ public class fetchData extends AsyncTask<Integer,Void,Void> {
             }
             DisplayPerson.tvHomeWorld.setText(homeWorld);
             DisplayPerson.ivTopImage.setImageResource(imageResources[0]);
+            DisplayPerson.stringDisplayName = name;
         }
         else if (name.equals("C-3PO")){
             DisplayPerson.tvName.setText(name);
@@ -144,6 +146,8 @@ public class fetchData extends AsyncTask<Integer,Void,Void> {
             }
             DisplayPerson.tvHomeWorld.setText(homeWorld);
             DisplayPerson.ivTopImage.setImageResource(imageResources[1]);
+            DisplayPerson.stringDisplayName = name;
+
         }
         else if(name.equals("Yoda")) {
             DisplayPerson.tvName.setText(name);
@@ -154,6 +158,7 @@ public class fetchData extends AsyncTask<Integer,Void,Void> {
             }
             DisplayPerson.tvHomeWorld.setText(homeWorld);
             DisplayPerson.ivTopImage.setImageResource(imageResources[2]);
+            DisplayPerson.stringDisplayName = name;
         }
         else if(name.equals("Anakin Skywalker")){
             DisplayPerson.tvName.setText(name);
@@ -215,6 +220,5 @@ public class fetchData extends AsyncTask<Integer,Void,Void> {
             DisplayPerson.tvHomeWorld.setText(homeWorld);
             DisplayPerson.ivTopImage.setImageResource(imageResources[8]);
         }
-        //MainActivity.tv.setText(this.dataParsed);
     }
 }

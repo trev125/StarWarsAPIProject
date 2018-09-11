@@ -11,7 +11,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
-        android:text="TextView"
+        android:text="@string/blankText"
         app:layout_constraintBottom_toBottomOf="@+id/homeWorldTitle"
         app:layout_constraintStart_toEndOf="@+id/homeWorldTitle" />
 
@@ -71,7 +71,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
-        android:text="TextView"
+        android:text="@string/blankText"
         app:layout_constraintBottom_toBottomOf="@+id/nameTitle"
         app:layout_constraintStart_toEndOf="@+id/nameTitle" />
 
@@ -80,7 +80,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="13dp"
-        android:text="TextView"
+        android:text="@string/blankText"
         app:layout_constraintBottom_toBottomOf="@+id/heightTitle"
         app:layout_constraintStart_toEndOf="@+id/heightTitle" />
 
@@ -100,7 +100,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
-        android:text="TextView"
+        android:text="@string/blankText"
         app:layout_constraintBottom_toBottomOf="@+id/weightTitle"
         app:layout_constraintStart_toEndOf="@+id/weightTitle" />
 

@@ -15,4 +15,6 @@
     <string name="han">Han Solo</string>
     <string name="chewie">Chewbacca</string>
     <string name="leia">Leia Organa</string>
+    <string name="lukeTitle">Luke Skywalker</string>
+    <string name="blankText" />
 </resources>

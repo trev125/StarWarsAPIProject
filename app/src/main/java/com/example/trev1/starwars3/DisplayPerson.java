@@ -1,5 +1,6 @@
 package com.example.trev1.starwars3;
 
+import android.content.Context;
 import android.os.Bundle;
 import android.app.Activity;
 import android.support.v7.app.AppCompatActivity;
@@ -16,11 +17,17 @@ public class DisplayPerson extends AppCompatActivity {
     public static RadioButton rbGenderNa;
     public static TextView tvHomeWorld;
     public static ImageView ivTopImage;
+    public static String stringDisplayName = "";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_display_person);
+
+        //setTitle(stringDisplayName);
+
+        this.setTitle(stringDisplayName);
 
         tvName = findViewById(R.id.name);
         tvHeight = findViewById(R.id.height);
@@ -30,6 +37,7 @@ public class DisplayPerson extends AppCompatActivity {
         rbGenderNa = findViewById(R.id.rbNA);
         tvHomeWorld = findViewById(R.id.homeWorld);
         ivTopImage = findViewById(R.id.topImage);
+
     }
 
 }
