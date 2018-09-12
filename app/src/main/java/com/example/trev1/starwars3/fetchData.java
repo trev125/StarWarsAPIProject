@@ -16,17 +16,15 @@ public class fetchData extends AsyncTask<Integer,Void,Void> {
     /* I set these variables here so I can access them in my onPostExecute function so I don't have
     *  to worry about passing the variables down there.
     */
-    String data = "";
-    public String nameParsed = "";
-    String heightParsed = "";
-    String weightParsed = "";
-    int heightCM = 0;
-    int weightKG = 0;
-    String hairColorParsed = "";
-    String genderParsed = "";
-    String homeWorldParsed = "";
-    String eyeColorParsed = "";
-    String birthYearParsed = "";
+    private String data = "";
+    private String nameParsed = "";
+    private String heightParsed = "";
+    private String weightParsed = "";
+    private String hairColorParsed = "";
+    private String genderParsed = "";
+    private String homeWorldParsed = "";
+    private String eyeColorParsed = "";
+    private String birthYearParsed = "";
 
     @Override
     protected Void doInBackground(Integer... integers) {
@@ -83,9 +81,9 @@ public class fetchData extends AsyncTask<Integer,Void,Void> {
             nameParsed = "" + JO.get("name");
             heightParsed = "" + JO.get("height");
             weightParsed = "" + JO.get("mass");
-            heightCM = Integer.parseInt(heightParsed);
+            int heightCM = Integer.parseInt(heightParsed);
             heightParsed = "" + convertHeight(heightCM);//Step 3a
-            weightKG = Integer.parseInt(weightParsed);
+            int weightKG = Integer.parseInt(weightParsed);
             weightParsed = "" + convertWeight(weightKG);//Step3a
             genderParsed = "" + JO.get("gender");
             genderParsed = genderParsed.substring(0, 1).toUpperCase() + genderParsed.substring(1).toLowerCase();//Step 3b
@@ -104,7 +102,7 @@ public class fetchData extends AsyncTask<Integer,Void,Void> {
         return null;
     }
 
-    protected String convertHeight(int height){
+    private String convertHeight(int height){
         //Like I said above, this is just to change the height from CM to feet and inches
         DecimalFormat df = new DecimalFormat("#.#");
         String heightString;
@@ -112,15 +110,15 @@ public class fetchData extends AsyncTask<Integer,Void,Void> {
         double inConst = 2.54;
         int ftConst = 12;
 
-        int cm = height;
-        double feet = cm/cmConst;
-        double inches = (cm/inConst) - ((int)feet * ftConst);
+        //int cm = height;
+        double feet = height/cmConst;
+        double inches = (height/inConst) - ((int)feet * ftConst);
         String formatInches = df.format(inches);
         heightString = "" + (int)feet + " feet and " + formatInches + " inches";
         return heightString;
     }
 
-    protected String convertWeight(int weight){
+    private String convertWeight(int weight){
         //Like I said above, this is just to convert from KG to Pounds.
         DecimalFormat df = new DecimalFormat("#.#");
         double conversion = 2.20462;
@@ -131,7 +129,7 @@ public class fetchData extends AsyncTask<Integer,Void,Void> {
     }
 
     @SuppressWarnings("StringConcatenationInLoop")
-    protected String homeworldParse (String homeworld) {
+    private String homeworldParse(String homeworld) {
         /*
         * This is the second parse function to get the Home World name for the person. It is
         * essentially the same function that I use earlier to get the personal information.

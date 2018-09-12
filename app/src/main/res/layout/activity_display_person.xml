@@ -123,6 +123,7 @@
         android:layout_marginStart="16dp"
         android:checked="false"
         android:text="@string/male"
+        android:clickable="false"
         app:layout_constraintStart_toEndOf="@+id/genderTitle"
         app:layout_constraintTop_toTopOf="@+id/genderTitle" />
 
@@ -133,6 +134,7 @@
         android:layout_marginStart="8dp"
         android:checked="false"
         android:text="@string/female"
+        android:clickable="false"
         app:layout_constraintStart_toEndOf="@+id/rbMale"
         app:layout_constraintTop_toTopOf="@+id/genderTitle" />
 
@@ -143,6 +145,7 @@
         android:layout_marginStart="8dp"
         android:checked="false"
         android:text="@string/na"
+        android:clickable="false"
         app:layout_constraintStart_toEndOf="@+id/rbFemale"
         app:layout_constraintTop_toTopOf="@+id/genderTitle" />
 

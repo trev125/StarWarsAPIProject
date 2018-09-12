@@ -36,7 +36,6 @@ public class DisplayPerson extends AppCompatActivity {
     public static TextView tvHomeWorld;
     public static TextView tvHairColor;
     public static ImageView ivTopImage;
-    public static String stringDisplayName = "";
     public static TextView tvEyeColor;
     public static TextView tvBirthYear;
 
@@ -48,6 +47,7 @@ public class DisplayPerson extends AppCompatActivity {
 
         //setTitle(stringDisplayName);
 
+        String stringDisplayName = "";
         this.setTitle(stringDisplayName);
 
         tvName = findViewById(R.id.name);
