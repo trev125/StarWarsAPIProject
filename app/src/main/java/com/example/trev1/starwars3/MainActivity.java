@@ -1,19 +1,11 @@
 package com.example.trev1.starwars3;
 
-import android.content.Context;
+
 import android.content.Intent;
-import android.os.SystemClock;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
-import android.view.ViewGroup;
-import android.widget.AdapterView;
-import android.widget.BaseAdapter;
-import android.widget.Button;
-import android.widget.GridView;
-import android.widget.ImageView;
-import android.widget.TextView;
-import android.widget.Toast;
+
 
 public class MainActivity extends AppCompatActivity {
 
@@ -27,7 +19,6 @@ public class MainActivity extends AppCompatActivity {
     public void sendPageLuke(View v) {
         fetchData process = new fetchData();
         process.execute(1);
-        //SystemClock.sleep(3000);
         Intent startNewActivity = new Intent(this, DisplayPerson.class);
         startActivity(startNewActivity);
 

@@ -8,10 +8,10 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
-import java.net.MalformedURLException;
 import java.net.URL;
 import java.text.DecimalFormat;
 
+@SuppressWarnings("StringConcatenationInLoop")
 public class fetchData extends AsyncTask<Integer,Void,Void> {
     /* I set these variables here so I can access them in my onPostExecute function so I don't have
     *  to worry about passing the variables down there.
@@ -63,7 +63,7 @@ public class fetchData extends AsyncTask<Integer,Void,Void> {
         *          want to show on the specific pages of the people. Then I access the different
         *          elements of the DisplayPerson activity and set the information of the person. The
         *          only thing that I had to be careful with here was the Gender and the Top Image.
-        *          Because those can be different per person, I did the if/else statements.
+        *          Because those can be different per person, I did the switch statements.
         *
         *  That's it! That's all of the project, hopefully explained well enough.
         */
@@ -98,11 +98,7 @@ public class fetchData extends AsyncTask<Integer,Void,Void> {
             eyeColorParsed = eyeColorParsed.substring(0, 1).toUpperCase() + eyeColorParsed.substring(1).toLowerCase();//Step 3b
             birthYearParsed = "" + JO.get("birth_year");
 
-        }catch (MalformedURLException e){
-            e.printStackTrace();
-        } catch (IOException e) {
-            e.printStackTrace();
-        } catch (JSONException e) {
+        }catch (JSONException | IOException e){
             e.printStackTrace();
         }
         return null;
@@ -134,6 +130,7 @@ public class fetchData extends AsyncTask<Integer,Void,Void> {
         return weightFormatted;
     }
 
+    @SuppressWarnings("StringConcatenationInLoop")
     protected String homeworldParse (String homeworld) {
         /*
         * This is the second parse function to get the Home World name for the person. It is
@@ -154,8 +151,6 @@ public class fetchData extends AsyncTask<Integer,Void,Void> {
             }
             JSONObject JO = new JSONObject(data);
             homeworldName = "" + JO.get("name");
-        }catch (MalformedURLException e){
-        e.printStackTrace();
         } catch (IOException e) {
         e.printStackTrace();
         } catch (JSONException e) {
@@ -177,8 +172,7 @@ public class fetchData extends AsyncTask<Integer,Void,Void> {
         */
         super.onPostExecute(aVoid);
 
-        int [] imageResources = new int [] {R.drawable.tatooine, R.drawable.tatooinemos, R.drawable.dago, R.drawable.tatoo, R.drawable.stew, R.drawable.naboo, R.drawable.alderaan,
-                                            R.drawable.corellia, R.drawable.kash};
+        int [] imageResources = new int [] {R.drawable.tatooine, R.drawable.tatooinemos, R.drawable.dago, R.drawable.tatoo, R.drawable.stew, R.drawable.naboo, R.drawable.alderaan, R.drawable.corellia, R.drawable.kash};
 
         DisplayPerson.tvName.setText(this.nameParsed);
         DisplayPerson.tvHeight.setText(this.heightParsed);
@@ -189,42 +183,46 @@ public class fetchData extends AsyncTask<Integer,Void,Void> {
         DisplayPerson.tvEyeColor.setText(this.eyeColorParsed);
         DisplayPerson.tvBirthYear.setText(this.birthYearParsed);
 
-        if(this.genderParsed.equals("Male")){
-            DisplayPerson.rbGenderMale.toggle();
-        }
-        else if(this.genderParsed.equals("Female")){
-            DisplayPerson.rbGenderFemale.toggle();
-        }
-        else {
-            DisplayPerson.rbGenderNa.toggle();
+        switch (this.genderParsed) {
+            case "Male":
+                DisplayPerson.rbGenderMale.toggle();
+                break;
+            case "Female":
+                DisplayPerson.rbGenderFemale.toggle();
+                break;
+            default:
+                DisplayPerson.rbGenderNa.toggle();
+                break;
         }
 
-        if(this.nameParsed.equals("Luke Skywalker")){
-            DisplayPerson.ivTopImage.setImageResource(imageResources[0]);
-        }
-        else if (this.nameParsed.equals("C-3PO")){
-            DisplayPerson.ivTopImage.setImageResource(imageResources[1]);
-        }
-        else if(this.nameParsed.equals("Yoda")) {
-            DisplayPerson.ivTopImage.setImageResource(imageResources[2]);
-        }
-        else if(this.nameParsed.equals("Anakin Skywalker")){
-            DisplayPerson.ivTopImage.setImageResource(imageResources[3]);
-        }
-        else if (this.nameParsed.equals("Obi-Wan Kenobi")){
-            DisplayPerson.ivTopImage.setImageResource(imageResources[4]);
-        }
-        else if(this.nameParsed.equals("Palpatine")) {
-            DisplayPerson.ivTopImage.setImageResource(imageResources[5]);
-        }
-        else if(this.nameParsed.equals("Leia Organa")){
-            DisplayPerson.ivTopImage.setImageResource(imageResources[6]);
-        }
-        else if (this.nameParsed.equals("Han Solo")){
-            DisplayPerson.ivTopImage.setImageResource(imageResources[7]);
-        }
-        else if(this.nameParsed.equals("Chewbacca")) {
-            DisplayPerson.ivTopImage.setImageResource(imageResources[8]);
+        switch (this.nameParsed) {
+            case "Luke Skywalker":
+                DisplayPerson.ivTopImage.setImageResource(imageResources[0]);
+                break;
+            case "C-3PO":
+                DisplayPerson.ivTopImage.setImageResource(imageResources[1]);
+                break;
+            case "Yoda":
+                DisplayPerson.ivTopImage.setImageResource(imageResources[2]);
+                break;
+            case "Anakin Skywalker":
+                DisplayPerson.ivTopImage.setImageResource(imageResources[3]);
+                break;
+            case "Obi-Wan Kenobi":
+                DisplayPerson.ivTopImage.setImageResource(imageResources[4]);
+                break;
+            case "Palpatine":
+                DisplayPerson.ivTopImage.setImageResource(imageResources[5]);
+                break;
+            case "Leia Organa":
+                DisplayPerson.ivTopImage.setImageResource(imageResources[6]);
+                break;
+            case "Han Solo":
+                DisplayPerson.ivTopImage.setImageResource(imageResources[7]);
+                break;
+            case "Chewbacca":
+                DisplayPerson.ivTopImage.setImageResource(imageResources[8]);
+                break;
         }
     }
 }
