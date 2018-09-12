@@ -128,7 +128,6 @@ public class fetchData extends AsyncTask<Integer,Void,Void> {
         return weightFormatted;
     }
 
-    @SuppressWarnings("StringConcatenationInLoop")
     private String homeworldParse(String homeworld) {
         /*
         * This is the second parse function to get the Home World name for the person. It is
