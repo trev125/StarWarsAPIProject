@@ -9,6 +9,12 @@ import android.view.View;
 
 public class MainActivity extends AppCompatActivity {
 
+    /*
+    *   This is the home page. Here I am just sending the correct number (to be used in the API URL)
+    *   based on the different characters.
+    */
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

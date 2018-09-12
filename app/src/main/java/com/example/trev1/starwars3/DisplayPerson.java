@@ -22,6 +22,9 @@ public class DisplayPerson extends AppCompatActivity {
     *  Back to the page, I create all of the TextViews, RadioButtons and ImageViews here so I can
     *  access them in the Async tasks. I then set them equal to all of the IDs that I have on the
     *  activity page so that I can actually load in the data. That's all that's on this page.
+    *
+    *  CREDIT FOR THE ICONS: https://www.behance.net/creativeflip
+    *
     */
     public static TextView tvName;
     public static TextView tvHeight;
